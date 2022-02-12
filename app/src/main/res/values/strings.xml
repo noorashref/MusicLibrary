@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Music</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="artist_name">Artist Name: %1$s</string>
+    <string name="collection_name">Collection  %1$s</string>
+</resources>
