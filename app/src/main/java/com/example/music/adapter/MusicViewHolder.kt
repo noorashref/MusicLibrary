@@ -31,45 +31,47 @@ class MusicViewHolder(private val binding: ItemLayoutBinding,
         itemView.setOnClickListener(this)
     }
 
-    fun onBind(musicItem :MusicItem) {
+    fun onBind(musicItem: MusicItem) {
 
-        binding.tvArtistName.text =  musicItem.artistName
+        binding.tvArtistName.text = musicItem.artistName
         binding.tvCollectionName.text = musicItem.collectionName
         binding.tvPrice.text = musicItem.trackPrice.toString()
         Picasso.get().load(musicItem.artworkUrl60).into(binding.ivAlbumImage)
 
         //Playing Music
-         var play_Song = binding.lyPlayMusic.setOnClickListener{
-             mMediaPlayer = MediaPlayer().apply {
-                 setAudioAttributes(
-                     AudioAttributes.Builder()
-                         .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-                         .setUsage(AudioAttributes.USAGE_MEDIA)
-                         .build()
-                 )
-                 setDataSource(musicItem.previewUrl)
-                 prepare()
-                 start()
+        binding.lyPlayMusic.setOnClickListener {
+            playSong(musicItem)
+        }
+        binding.btn.setOnClickListener {
+            if (mMediaPlayer!!.isPlaying) {
+                mMediaPlayer!!.stop()
+                binding.ivAlbumImage.setImageResource(R.drawable.ic_outline_music_off_24)
+            }
+        }
 
-         }
-             binding.btn.setOnClickListener{
-                 if(mMediaPlayer!!.isPlaying){
-                     mMediaPlayer!!.stop()
-                     itemView.setBackgroundResource(R.drawable.ic_outline_music_off_24)
-                 }
-         }
-         }
     }
 
 
     //new
     override fun onClick(p0: View?) {
-        val position : Int = adapterPosition
-        if(position != RecyclerView.NO_POSITION) {
+        val position: Int = adapterPosition
+        if (position != RecyclerView.NO_POSITION) {
             listener.onItemClick(position)
         }
     }
+
     //Audio Player Function
-    private fun playSong() {
+    private fun playSong(musicItem: MusicItem) {
+        mMediaPlayer = MediaPlayer().apply {
+            setAudioAttributes(
+                AudioAttributes.Builder()
+                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                    .setUsage(AudioAttributes.USAGE_MEDIA)
+                    .build()
+            )
+            setDataSource(musicItem.previewUrl)
+            prepare()
+            start()
+        }
     }
 }

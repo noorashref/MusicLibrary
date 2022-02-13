@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/refal/AndroidStudioProjects/Kotlin/Music/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.17" />
         <entry key="..\:/Users/refal/AndroidStudioProjects/Kotlin/Music/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/refal/AndroidStudioProjects/Kotlin/Music/app/src/main/res/layout/fragment_classic.xml" value="0.2786458333333333" />
         <entry key="..\:/Users/refal/AndroidStudioProjects/Kotlin/Music/app/src/main/res/layout/fragment_pop.xml" value="0.2265625" />
