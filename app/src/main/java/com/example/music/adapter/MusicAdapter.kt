@@ -20,12 +20,12 @@ public class MusicAdapter(private val results : List<MusicItem>,
 
 
     override fun onBindViewHolder(holder: MusicViewHolder, position: Int) {
-        Log.d(TAG, "onbind: ${results.get(position).artistName} ")
+        Log.d(TAG, "onBind: ${results.get(position).artistName} ")
         holder.onBind(results[position])
     }
 
     override fun getItemCount(): Int {
-        Log.d(TAG, "getitem:${results.size}")
+        Log.d(TAG, "getItem:${results.size}")
       return results.size
     }
 

@@ -7,6 +7,7 @@ import android.net.Uri
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.music.R
 import com.example.music.databinding.ItemLayoutBinding
@@ -23,9 +24,7 @@ class MusicViewHolder(private val binding: ItemLayoutBinding,
 )
     :RecyclerView.ViewHolder(binding.root),View.OnClickListener {
 
-
     var mMediaPlayer: MediaPlayer? = null
-
 
     //new
     init {
@@ -51,18 +50,15 @@ class MusicViewHolder(private val binding: ItemLayoutBinding,
                  setDataSource(musicItem.previewUrl)
                  prepare()
                  start()
+
          }
              binding.btn.setOnClickListener{
                  if(mMediaPlayer!!.isPlaying){
                      mMediaPlayer!!.stop()
+                     itemView.setBackgroundResource(R.drawable.ic_outline_music_off_24)
                  }
-
          }
          }
-
-
-//       val value = play_Song
-//        Log.d(TAG, "Music url testing----: ${play_Song},${value::class.qualifiedName}")
     }
 
 

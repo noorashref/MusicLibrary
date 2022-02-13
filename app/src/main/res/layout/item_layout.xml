@@ -74,7 +74,6 @@
                 android:text=""
                 android:background="@drawable/ic_outline_music_off_24"
                 />
-
     </LinearLayout>
 
     </LinearLayout>
