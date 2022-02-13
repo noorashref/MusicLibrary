@@ -8,6 +8,7 @@ import com.example.music.databinding.ItemLayoutBinding
 import com.example.music.model.remote.MusicItem
 
 private const val TAG = "MusicAdapter"
+
 public class MusicAdapter(private val results : List<MusicItem>,
                           private val listener : OnItemClickListener ) :
     RecyclerView.Adapter<MusicViewHolder>() {

@@ -1,6 +1,8 @@
 package com.example.music.view
 
 import android.app.Activity
+import android.media.AudioAttributes
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -27,6 +29,8 @@ import retrofit2.Response
 private const val TAG = "RockFragment"
 
 class RockFragment : Fragment(),MusicAdapter.OnItemClickListener {
+
+    private var mediaPlayer : MediaPlayer? =null
 
     private lateinit var binding: FragmentRockBinding
 
@@ -72,8 +76,21 @@ class RockFragment : Fragment(),MusicAdapter.OnItemClickListener {
 
     override fun onItemClick(position: Int) {
         Log.d(TAG, "onItemClick: $position")
-        //Toast.makeText(this, "$position", Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireContext(), "$position", Toast.LENGTH_SHORT).show()
+    }
 
+    fun playMusic(previewUrl : String){
+        MediaPlayer().apply {
+            setAudioAttributes(
+                AudioAttributes.Builder()
+                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                    .setUsage(AudioAttributes.USAGE_MEDIA)
+                    .build()
+            )
+            setDataSource(previewUrl)
+            prepare()
+            start()
+        }
     }
 
 }

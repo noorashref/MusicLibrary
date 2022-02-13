@@ -3,27 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="130dp"
     android:layout_margin="10dp"
-    app:cardBackgroundColor="@color/white"
-    app:cardElevation="10dp">
+   app:cardBackgroundColor="#F7ECDE"
+    app:cardCornerRadius="30dp"
+    app:cardElevation="25dp">
 
     <LinearLayout
+        android:id="@+id/ly_play_music"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="20dp">
 
-        <ImageView
+            <ImageView
             android:id="@+id/iv_album_image"
             android:layout_width="80dp"
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
-            android:background="#0CE8BC"
             android:scaleType="fitXY" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="313dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
@@ -33,34 +34,50 @@
                 android:id="@+id/tv_artist_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@color/teal_700"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold"
                 tools:text="Artist name" />
 
             <TextView
                 android:id="@+id/tv_collection_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@color/purple_500"
-                tools:text="collection name" />
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="14dp" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="vertical"
-
-            >
-
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        >
             <TextView
                 android:id="@+id/tv_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                tools:text="price" />
-        </LinearLayout>
+                android:text=""
+                android:textSize="14dp"
+                android:textStyle="bold"
+             />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GBP"
+                />
+            <Button
+                android:id="@+id/btn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text=""
+                android:background="@drawable/ic_outline_music_off_24"
+                />
+
     </LinearLayout>
+
+    </LinearLayout>
+
 
 </androidx.cardview.widget.CardView>

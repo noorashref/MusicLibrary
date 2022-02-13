@@ -15,4 +15,5 @@ data class MusicItem(
     val artworkUrl60: String,
     val collectionName: String,
     val trackPrice: Double,
+    val previewUrl :String
     ) : Parcelable
